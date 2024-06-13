@@ -19,7 +19,7 @@ const AdminNavbar = ({ handleMenu, display, handleMinimize, minimize }) => {
         </div>
 
         <span
-          className={`cursor-pointer hidden lg:block bg-slate-600 rounded-lg ${minimize ? "px-4":""} p-2`}
+          className={`cursor-pointer hidden lg:block bg-slate-600 rounded-lg ${minimize ? "px-4 rotate-180":""} p-2 transform transition-transform duration-[400ms] ease-linear`}
           onClick={handleMinimize}
         >
           <img src="/images/icons/menu-fold-line.svg" className="w-6 h-6" />

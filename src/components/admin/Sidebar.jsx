@@ -22,7 +22,7 @@ const Sidebar = ({ display, minimize }) => {
       <nav className=" flex min-h-[calc(100vh-100px)] flex-col justify-between overflow-hidden">
           <div className="flex flex-col justify-between py-6 px-4 gap-2 self-stretch max-h-[calc(100vh-100px)] overflow-y-hidden hover:!overflow-auto scrollbar">
             <Link href="/" target="_blank">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <HomeIcon />
                 <div
                   className={`${
@@ -37,7 +37,7 @@ const Sidebar = ({ display, minimize }) => {
             </Link>
 
             <Link href="/dashboard">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <DashboardIcon />
                 <div
                   className={`${
@@ -51,7 +51,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/products">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <StoreIcon />
                 <div
                   className={`${
@@ -65,7 +65,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/orders">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <ShoppingCartIcon />
                 <div
                   className={`${
@@ -79,7 +79,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/stores">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <StoreIcon />
                 <div
                   className={`${
@@ -93,7 +93,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/posts">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <PostAddIcon />
                 <div
                   className={`${
@@ -107,7 +107,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/messages">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <MessageIcon />
                 <div
                   className={`${
@@ -121,7 +121,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/profile">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <AdminPanelSettingsIcon />
                 <div
                   className={`${
@@ -135,7 +135,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/users">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <GroupIcon />
                 <div
                   className={`${
@@ -149,7 +149,7 @@ const Sidebar = ({ display, minimize }) => {
               </li>
             </Link>
             <Link href="/dashboard/settings">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200">
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
                 <SettingsIcon />
                 <div
                   className={`${
@@ -166,7 +166,7 @@ const Sidebar = ({ display, minimize }) => {
         <div className="py-6 px-4">
           <Link
             href="#"
-            className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-yellow-100 hover:bg-yellow-200"
+            className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white"
           >
             <LogoutIcon />
             <div
