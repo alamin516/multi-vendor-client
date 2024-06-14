@@ -2,7 +2,7 @@ import React from "react";
 import LargeCard from "./LargeCard";
 
 const LargeCards = () => {
-  const largeCard = [
+  const salesStats = [
     {
       title: "Today Orders",
       sales: 1200,
@@ -31,7 +31,7 @@ const LargeCards = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 py-10">
       {
-        largeCard.map((item, i)=> {
+        salesStats.map((item, i)=> {
           return <LargeCard key={i} data={item}/>
         })
       }

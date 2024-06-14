@@ -2,7 +2,10 @@ import React from 'react'
 
 const Charts = () => {
   return (
-    <div>Charts</div>
+    <div className='grid grid-cols-1 lg:grid-cols-2 py-10'>
+      <div>1</div>
+      <div>2</div>
+    </div>
   )
 }
 

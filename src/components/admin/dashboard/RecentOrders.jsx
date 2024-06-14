@@ -2,7 +2,9 @@ import React from 'react'
 
 const RecentOrders = () => {
   return (
-    <div>RecentOrders</div>
+    <div className='py-10'>
+        Recent Order Table
+    </div>
   )
 }
 
