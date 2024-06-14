@@ -1,10 +1,12 @@
 'use client'
 import AdminNavbar from "@/components/admin/AdminNavbar";
 import Sidebar from "@/components/admin/Sidebar";
-import { useState } from "react";
+import useMediaQuery from "@/utilities/useMediaQuery";
+import { useEffect, useState } from "react";
 
 
 export default function Layout({children}) {
+  const isBetweenMdAndLg = useMediaQuery('(min-width: 1024px) and (max-width: 1300px)');
   const [display, setDisplay] = useState(false)
   const [minimize, setMinimize] = useState(false)
 
@@ -15,6 +17,15 @@ export default function Layout({children}) {
   const handleMinimizeSidebar = () =>[
     setMinimize(!minimize)
   ]
+
+    
+  useEffect(() => {
+    if (isBetweenMdAndLg) {
+      setMinimize(true);
+    }else {
+      setMinimize(false);
+    }
+  }, [isBetweenMdAndLg]);
 
   return (
     <div className="flex flex-col h-screen bg-slate-800 ">

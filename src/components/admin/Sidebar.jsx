@@ -11,6 +11,8 @@ import StoreIcon from "@mui/icons-material/Store";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Sidebar = ({ display, minimize }) => {
+
+
   return (
     <aside
       className={`sidebar transform ${
