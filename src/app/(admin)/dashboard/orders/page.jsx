@@ -4,7 +4,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-      <Heading title="Products Overview"/>
+      <Heading title="Order Overview"/>
       
     </div>
   )

@@ -1,14 +1,17 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import CancelIcon from "@mui/icons-material/Cancel";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import CancelIcon from "@mui/icons-material/Cancel";
+import MenuIcon from "@mui/icons-material/Menu";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import { useTheme } from "next-themes";
+import ThemeToggle from "../ThemeToggle";
 
 const AdminNavbar = ({ handleMenu, display, handleMinimize, minimize }) => {
   return (
     <nav className="bg-gray-800 p-4 text-white flex justify-between items-center h-16">
       <div
-        className={`font-semibold flex ${minimize ? "gap-0" : "gap-4"} items-center transition duration-[400ms] ease-linear`}
+        className={`font-semibold flex ${
+          minimize ? "gap-0" : "gap-4"
+        } items-center transition duration-[400ms] ease-linear`}
       >
         <div
           className={`${
@@ -19,7 +22,9 @@ const AdminNavbar = ({ handleMenu, display, handleMinimize, minimize }) => {
         </div>
 
         <span
-          className={`cursor-pointer hidden lg:block bg-slate-600 rounded-lg ${minimize ? "px-4 rotate-180":""} p-2 transform transition-transform duration-[400ms] ease-linear`}
+          className={`cursor-pointer hidden lg:block bg-slate-600 rounded-lg ${
+            minimize ? "px-4 rotate-180" : ""
+          } p-2 transform transition-transform duration-[400ms] ease-linear`}
           onClick={handleMinimize}
         >
           <img src="/images/icons/menu-fold-line.svg" className="w-6 h-6" />
@@ -27,9 +32,7 @@ const AdminNavbar = ({ handleMenu, display, handleMinimize, minimize }) => {
       </div>
 
       <div className="lg:pr-5 flex space-x-2 lg:space-x-4 items-center">
-        <div className="cursor-pointer">
-          <WbSunnyIcon className="h-6 w-6" />
-        </div>
+        <ThemeToggle/>
         <div className="cursor-pointer">
           <NotificationsIcon className="h-6 w-6" />
         </div>
