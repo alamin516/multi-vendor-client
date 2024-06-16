@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import ExportToExcel from "../ExportToExcel";
 
 const RecentOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -33,7 +34,12 @@ const RecentOrders = () => {
 
   return (
     <div className="py-10">
-      <h2 className="text-xl text-black dark:text-white mb-3">Recent Orders</h2>
+      <div className="flex justify-between items-center mb-3">
+        <h2 className="text-xl text-black dark:text-white">
+          Recent Orders
+        </h2>
+        <ExportToExcel data={orders} title="orderssheet"/>
+      </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg pb-2 lg:px-5">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-200">
           <thead className="bg-gray-50 dark:bg-gray-700 text-xs text-gray-700 uppercase dark:text-gray-400">
@@ -153,35 +159,43 @@ const RecentOrders = () => {
             </span>
           </span>
           <ul className="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
-            {currentPage > 1 && <li>
-              <button
-                onClick={() => setCurrentPage(currentPage - 1)}
-                href="#"
-                className={`flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
-              >
-                Previous
-              </button>
-            </li>}
+            {currentPage > 1 && (
+              <li>
+                <button
+                  onClick={() => setCurrentPage(currentPage - 1)}
+                  href="#"
+                  className={`flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+                >
+                  Previous
+                </button>
+              </li>
+            )}
             {pageNumbers.map((number) => (
               <li>
                 <button
                   key={number}
-                  onClick={()=> setCurrentPage(number)}
-                  className={`${currentPage == number ? "text-white bg-blue-600 border border-blue-600 hover:bg-gray-100 hover:text-gray-700 dark:bg-white dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" } flex items-center justify-center px-3 h-8 leading-tight `}
+                  onClick={() => setCurrentPage(number)}
+                  className={`${
+                    currentPage == number
+                      ? "text-white bg-blue-600 border border-blue-600 hover:bg-gray-100 hover:text-gray-700 dark:bg-white dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                      : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                  } flex items-center justify-center px-3 h-8 leading-tight `}
                 >
                   {number}
                 </button>
               </li>
             ))}
-            {currentPage !== totalPages && <li>
-              <button
-                onClick={() => setCurrentPage(currentPage + 1)}
-                href="#"
-                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                Next
-              </button>
-            </li>}
+            {currentPage !== totalPages && (
+              <li>
+                <button
+                  onClick={() => setCurrentPage(currentPage + 1)}
+                  href="#"
+                  className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >
+                  Next
+                </button>
+              </li>
+            )}
           </ul>
         </nav>
       </div>
