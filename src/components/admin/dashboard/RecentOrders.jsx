@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 
 const RecentOrders = () => {
   const [orders, setOrders] = useState([]);
+  const pageSize = 2;
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     fetch("/data.json")
@@ -13,10 +15,25 @@ const RecentOrders = () => {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  console.log(orders);
+  // Pagination for Orders Table
+  const index = (currentPage - 1) * pageSize;
+  const lastIndex = index + pageSize;
+  const currentOrders = orders.slice(index, lastIndex);
+
+  const totalPages = Math.ceil(orders.length / pageSize);
+  const startItemIndex = index + 1;
+  const lastItemIndex = Math.min(index + pageSize, orders.length);
+  const totalOrders = orders.length;
+
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalOrders / pageSize); i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <div className="py-10">
+      <h2 className="text-xl text-black dark:text-white mb-3">Recent Orders</h2>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg pb-2 lg:px-5">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-200">
           <thead className="bg-gray-50 dark:bg-gray-700 text-xs text-gray-700 uppercase dark:text-gray-400">
@@ -63,7 +80,7 @@ const RecentOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.slice(0, 2).map((order, i) => (
+            {currentOrders.map((order, i) => (
               <tr
                 key={order.orderId}
                 className="hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -128,71 +145,43 @@ const RecentOrders = () => {
           <span className="text-sm font-normal text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">
             Showing{" "}
             <span className="font-semibold text-black dark:text-white">
-              1-10
+              {startItemIndex}-{lastItemIndex}
             </span>{" "}
             of{" "}
             <span className="font-semibold text-black dark:text-white">
-              1000
+              {totalOrders}
             </span>
           </span>
           <ul className="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
-            <li>
-              <a
+            {currentPage > 1 && <li>
+              <button
+                onClick={() => setCurrentPage(currentPage - 1)}
                 href="#"
-                className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className={`flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
               >
                 Previous
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                1
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                2
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                aria-current="page"
-                className="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-              >
-                3
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                4
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                5
-              </a>
-            </li>
-            <li>
-              <a
+              </button>
+            </li>}
+            {pageNumbers.map((number) => (
+              <li>
+                <button
+                  key={number}
+                  onClick={()=> setCurrentPage(number)}
+                  className={`${currentPage == number ? "text-white bg-blue-600 border border-blue-600 hover:bg-gray-100 hover:text-gray-700 dark:bg-white dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" } flex items-center justify-center px-3 h-8 leading-tight `}
+                >
+                  {number}
+                </button>
+              </li>
+            ))}
+            {currentPage !== totalPages && <li>
+              <button
+                onClick={() => setCurrentPage(currentPage + 1)}
                 href="#"
                 className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 Next
-              </a>
-            </li>
+              </button>
+            </li>}
           </ul>
         </nav>
       </div>

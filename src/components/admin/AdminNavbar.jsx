@@ -7,7 +7,7 @@ import ThemeToggle from "../ThemeToggle";
 
 const AdminNavbar = ({ handleMenu, display, handleMinimize, minimize }) => {
   return (
-    <nav className="dark:bg-gray-800 bg-white p-4 dark:text-white text-black flex justify-between items-center h-16 shadow-sm">
+    <nav className="dark:bg-gray-800 bg-blue-800 p-4 dark:text-white text-white flex justify-between items-center h-16 shadow-sm">
       <div
         className={`font-semibold flex ${
           minimize ? "gap-0" : "gap-4"
