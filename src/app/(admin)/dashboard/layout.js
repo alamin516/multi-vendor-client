@@ -28,7 +28,7 @@ export default function Layout({children}) {
   }, [isBetweenMdAndLg]);
 
   return (
-    <div className="flex flex-col h-screen bg-slate-800 ">
+    <div className="flex flex-col h-screen bg-blue-800 dark:bg-slate-800">
       <AdminNavbar 
       handleMenu={handleMenu} 
       display={display}
@@ -40,7 +40,7 @@ export default function Layout({children}) {
         display={display}
         minimize={minimize}
         />
-        <main className="flex-1 sm:rounded-tl-lg lg:rounded-tl-lg dash-bg bg-slate-700 text-white p-5">
+        <main className="flex-1 sm:rounded-tl-lg lg:rounded-tl-lg dash-bg dark:bg-slate-700 bg-slate-50 text-white p-5">
           {children}
         </main>
       </div>

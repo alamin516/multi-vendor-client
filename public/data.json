@@ -1,0 +1,314 @@
+{
+  "orders": [
+    {
+      "orderId": "12345",
+      "customer": {
+        "customerId": "c001",
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "address": {
+          "street": "123 Main St",
+          "city": "Springfield",
+          "state": "IL",
+          "zipCode": "62701",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-15T10:45:00Z",
+      "status": "Processing",
+      "products": [
+        {
+          "productId": "p001",
+          "name": "Wireless Mouse",
+          "category": "Electronics",
+          "price": 29.99,
+          "quantity": 2
+        },
+        {
+          "productId": "p002",
+          "name": "Mechanical Keyboard",
+          "category": "Electronics",
+          "price": 89.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 149.97,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Standard"
+    },
+    {
+      "orderId": "12346",
+      "customer": {
+        "customerId": "c002",
+        "name": "Jane Smith",
+        "email": "janesmith@example.com",
+        "address": {
+          "street": "456 Elm St",
+          "city": "Madison",
+          "state": "WI",
+          "zipCode": "53703",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-14T14:30:00Z",
+      "status": "Shipped",
+      "products": [
+        {
+          "productId": "p003",
+          "name": "Bluetooth Headphones",
+          "category": "Electronics",
+          "price": 59.99,
+          "quantity": 1
+        },
+        {
+          "productId": "p004",
+          "name": "Smartphone Stand",
+          "category": "Accessories",
+          "price": 19.99,
+          "quantity": 3
+        }
+      ],
+      "totalAmount": 119.96,
+      "paymentMethod": "PayPal",
+      "shippingMethod": "Express"
+    },
+    {
+      "orderId": "12347",
+      "customer": {
+        "customerId": "c003",
+        "name": "Alice Johnson",
+        "email": "alicej@example.com",
+        "address": {
+          "street": "789 Oak St",
+          "city": "Austin",
+          "state": "TX",
+          "zipCode": "73301",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-13T09:15:00Z",
+      "status": "Delivered",
+      "products": [
+        {
+          "productId": "p005",
+          "name": "Laptop Sleeve",
+          "category": "Accessories",
+          "price": 25.99,
+          "quantity": 1
+        },
+        {
+          "productId": "p006",
+          "name": "USB-C Hub",
+          "category": "Electronics",
+          "price": 45.99,
+          "quantity": 1
+        },
+        {
+          "productId": "p007",
+          "name": "Portable Charger",
+          "category": "Electronics",
+          "price": 34.99,
+          "quantity": 2
+        }
+      ],
+      "totalAmount": 141.96,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Standard"
+    },
+    {
+      "orderId": "12349",
+      "customer": {
+        "customerId": "c005",
+        "name": "Emily Davis",
+        "email": "emilyd@example.com",
+        "address": {
+          "street": "654 Maple St",
+          "city": "Portland",
+          "state": "OR",
+          "zipCode": "97205",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-11T13:45:00Z",
+      "status": "Shipped",
+      "products": [
+        {
+          "productId": "p010",
+          "name": "Fitness Tracker",
+          "category": "Electronics",
+          "price": 79.99,
+          "quantity": 2
+        }
+      ],
+      "totalAmount": 159.98,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Express"
+    },
+    {
+      "orderId": "12350",
+      "customer": {
+        "customerId": "c006",
+        "name": "Michael Lee",
+        "email": "michaell@example.com",
+        "address": {
+          "street": "789 Birch St",
+          "city": "San Francisco",
+          "state": "CA",
+          "zipCode": "94103",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-10T16:30:00Z",
+      "status": "Delivered",
+      "products": [
+        {
+          "productId": "p011",
+          "name": "Gaming Mouse",
+          "category": "Electronics",
+          "price": 49.99,
+          "quantity": 1
+        },
+        {
+          "productId": "p012",
+          "name": "Gaming Keyboard",
+          "category": "Electronics",
+          "price": 129.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 179.98,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Standard"
+    },
+    {
+      "orderId": "12351",
+      "customer": {
+        "customerId": "c007",
+        "name": "Sarah Wilson",
+        "email": "sarahw@example.com",
+        "address": {
+          "street": "951 Cedar St",
+          "city": "Seattle",
+          "state": "WA",
+          "zipCode": "98101",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-09T09:00:00Z",
+      "status": "Processing",
+      "products": [
+        {
+          "productId": "p013",
+          "name": "4K Monitor",
+          "category": "Electronics",
+          "price": 299.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 299.99,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Standard"
+    },
+    {
+      "orderId": "12352",
+      "customer": {
+        "customerId": "c008",
+        "name": "David Taylor",
+        "email": "davidt@example.com",
+        "address": {
+          "street": "123 Ash St",
+          "city": "Phoenix",
+          "state": "AZ",
+          "zipCode": "85001",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-08T17:00:00Z",
+      "status": "Shipped",
+      "products": [
+        {
+          "productId": "p014",
+          "name": "Wireless Charger",
+          "category": "Electronics",
+          "price": 24.99,
+          "quantity": 3
+        }
+      ],
+      "totalAmount": 74.97,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Express"
+    },
+    {
+      "orderId": "12353",
+      "customer": {
+        "customerId": "c009",
+        "name": "Laura Martinez",
+        "email": "lauram@example.com",
+        "address": {
+          "street": "456 Spruce St",
+          "city": "Chicago",
+          "state": "IL",
+          "zipCode": "60601",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-07T10:15:00Z",
+      "status": "Delivered",
+      "products": [
+        {
+          "productId": "p015",
+          "name": "Noise-Cancelling Headphones",
+          "category": "Electronics",
+          "price": 199.99,
+          "quantity": 1
+        },
+        {
+          "productId": "p016",
+          "name": "Laptop Stand",
+          "category": "Accessories",
+          "price": 39.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 239.98,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Standard"
+    },
+    {
+      "orderId": "12354",
+      "customer": {
+        "customerId": "c010",
+        "name": "Paul Hernandez",
+        "email": "paulh@example.com",
+        "address": {
+          "street": "789 Redwood St",
+          "city": "Miami",
+          "state": "FL",
+          "zipCode": "33101",
+          "country": "USA"
+        }
+      },
+      "orderDate": "2024-06-06T15:45:00Z",
+      "status": "Processing",
+      "products": [
+        {
+          "productId": "p017",
+          "name": "Portable Speaker",
+          "category": "Electronics",
+          "price": 59.99,
+          "quantity": 2
+        },
+        {
+          "productId": "p018",
+          "name": "Smart Light Bulb",
+          "category": "Electronics",
+          "price": 29.99,
+          "quantity": 4
+        }
+      ],
+      "totalAmount": 239.94,
+      "paymentMethod": "Credit Card",
+      "shippingMethod": "Standard"
+    }
+  ]
+}

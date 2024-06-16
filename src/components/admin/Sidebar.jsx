@@ -10,165 +10,52 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import StoreIcon from "@mui/icons-material/Store";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
+const menuItems = [
+  { href: '/', icon: <HomeIcon />, label: 'Visit Site', target: '_blank' },
+  { href: '/dashboard', icon: <DashboardIcon />, label: 'Dashboard' },
+  { href: '/dashboard/products', icon: <StoreIcon />, label: 'Products' },
+  { href: '/dashboard/orders', icon: <ShoppingCartIcon />, label: 'Orders' },
+  { href: '/dashboard/stores', icon: <StoreIcon />, label: 'Stores' },
+  { href: '/dashboard/posts', icon: <PostAddIcon />, label: 'Posts' },
+  { href: '/dashboard/messages', icon: <MessageIcon />, label: 'Messages' },
+  { href: '/dashboard/profile', icon: <AdminPanelSettingsIcon />, label: 'Profile' },
+  { href: '/dashboard/users', icon: <GroupIcon />, label: 'Users' },
+  { href: '/dashboard/settings', icon: <SettingsIcon />, label: 'Settings' },
+];
+
+
 const Sidebar = ({ display, minimize }) => {
-
-
   return (
     <aside
       className={`sidebar transform ${
         display ? "translate-x-0" : "-translate-x-full"
-      } transition-all duration-[400ms] bg-slate-800 text-black ${
+      } transition-all duration-[400ms] dark:bg-slate-800 bg-blue-800 text-black ${
         minimize ? "w-[90px]" : "w-64"
       } lg:translate-x-0 lg:static absolute top-[60px] left-0 min-h-screen-minus-60px z-50`}
     >
       <nav className=" flex min-h-[calc(100vh-100px)] flex-col justify-between overflow-hidden">
           <div className="flex flex-col justify-between py-6 px-4 gap-2 self-stretch max-h-[calc(100vh-100px)] overflow-y-hidden hover:!overflow-auto scrollbar">
-            <Link href="/" target="_blank">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <HomeIcon />
+          {menuItems.map((item, index) => (
+            <Link key={index} href={item.href} target={item.target || "_self"}>
+              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white dark:bg-slate-500 dark:text-slate-200">
+                {item.icon}
                 <div
                   className={`${
                     minimize ? "opacity-0 w-full" : "opacity-100 w-full"
                   }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
                 >
                   <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Visit Site
+                    {item.label}
                   </p>
                 </div>
               </li>
             </Link>
-
-            <Link href="/dashboard">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <DashboardIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Dashboard
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/products">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <StoreIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Products
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/orders">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <ShoppingCartIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Orders
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/stores">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <StoreIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Stores
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/posts">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <PostAddIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Posts
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/messages">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <MessageIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Messages
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/profile">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <AdminPanelSettingsIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Profile
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/users">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <GroupIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Users
-                  </p>
-                </div>
-              </li>
-            </Link>
-            <Link href="/dashboard/settings">
-              <li className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white">
-                <SettingsIcon />
-                <div
-                  className={`${
-                    minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-                  }  flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
-                >
-                  <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
-                    Settings
-                  </p>
-                </div>
-              </li>
-            </Link>
+          ))}
         </div>
         <div className="py-6 px-4">
           <Link
             href="#"
-            className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white"
+            className="flex items-center group  w-full rounded cursor-pointer transition-all duration-[400ms] relative overflow-hidden py-2 px-4 bg-white hover:bg-white dark:bg-slate-500 dark:text-slate-200"
           >
             <LogoutIcon />
             <div
