@@ -38,7 +38,7 @@ const RecentOrders = () => {
         <h2 className="text-xl text-black dark:text-white">
           Recent Orders
         </h2>
-        <ExportToExcel data={orders} title="orderssheet"/>
+        <ExportToExcel data={orders} fileName="orders_sheet" />
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg pb-2 lg:px-5">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-200">
