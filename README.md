@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Multi-Vendor Website README
 
-## Getting Started
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [API Documentation](#api-documentation)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Contact](#contact)
 
-First, run the development server:
+## Introduction
+Welcome to the Multi-Vendor Website! This platform allows multiple vendors to register, list their products, and manage their stores while providing customers with a wide range of products to choose from. Our goal is to create a seamless and efficient marketplace for both vendors and customers.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **Vendor Management:** Vendors can register, create profiles, list products, and manage orders.
+- **Product Listings:** Comprehensive product listing with categories, search functionality, and filters.
+- **Order Management:** Customers can place orders, track shipments, and manage their order history.
+- **Payment Integration:** Secure payment gateway integration for smooth transactions.
+- **Review System:** Customers can leave reviews and ratings for products.
+- **Admin Panel:** Admins can manage users, products, orders, and site settings.
+- **Responsive Design:** Fully responsive design to ensure compatibility across all devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+To set up the project locally, follow these steps:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js
+- npm (Node Package Manager)
+- MongoDB
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Steps
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/alamin516/multi-vendor-client
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd multi-vendor-website
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Set up environment variables:
+    Create a `.env` file in the root directory and add the following:
+    ```
+    DB_CONNECTION_STRING=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret_key
+    PAYMENT_GATEWAY_API_KEY=your_payment_gateway_api_key
+    ```
+5. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-## Learn More
+## Usage
+Once the server is running, you can access the application at `http://localhost:3000`.
 
-To learn more about Next.js, take a look at the following resources:
+### For Vendors
+1. Register as a vendor.
+2. Complete your vendor profile.
+3. List your products with detailed descriptions and images.
+4. Manage orders from your dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### For Customers
+1. Browse products by categories or search for specific items.
+2. Add products to your cart and proceed to checkout.
+3. Complete the payment process securely.
+4. Track your order status and view order history.
+5. Leave reviews and ratings for purchased products.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## API Documentation
+Our API allows developers to integrate and interact with the platform programmatically.
 
-## Deploy on Vercel
+### Authentication
+- **Register:** `POST /api/auth/register`
+- **Login:** `POST /api/auth/login`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Products
+- **Get All Products:** `GET /api/products`
+- **Get Product By ID:** `GET /api/products/:id`
+- **Create Product:** `POST /api/products` (Vendor only)
+- **Update Product:** `PUT /api/products/:id` (Vendor only)
+- **Delete Product:** `DELETE /api/products/:id` (Vendor only)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Orders
+- **Create Order:** `POST /api/orders` (Customer only)
+- **Get All Orders:** `GET /api/orders` (Vendor/Admin only)
+- **Get Order By ID:** `GET /api/orders/:id`
+- **Update Order Status:** `PUT /api/orders/:id` (Vendor/Admin only)
+
+## Contributing
+We welcome contributions to enhance the platform. To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/YourFeature`).
+6. Open a pull request.
+
+Please ensure your code follows our coding standards and includes relevant tests.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For any inquiries, please contact us at alamin.webdeveloper1@gmail.com
+
+Thank you for using the Multi-Vendor Website! We hope you have a great experience.
